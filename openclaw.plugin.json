@@ -1,0 +1,30 @@
+{
+  "id": "inworld-tts",
+  "name": "Inworld TTS",
+  "description": "OpenClaw speech provider plugin for Inworld TTS.",
+  "providers": ["inworld"],
+  "providerAuthEnvVars": {
+    "inworld": ["INWORLD_API_KEY"]
+  },
+  "providerAuthChoices": [
+    {
+      "provider": "inworld",
+      "method": "api-key",
+      "choiceId": "inworld-api-key",
+      "choiceLabel": "Inworld API key",
+      "groupId": "inworld",
+      "groupLabel": "Inworld",
+      "cliFlag": "--inworld-api-key",
+      "cliOption": "--inworld-api-key <key>",
+      "cliDescription": "Inworld API key"
+    }
+  ],
+  "contracts": {
+    "speechProviders": ["inworld"]
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "name": "openclaw-inworld-tts",
+  "version": "1.0.0",
+  "description": "OpenClaw Inworld text-to-speech provider plugin",
+  "license": "MIT",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.ts",
+    "openclaw.plugin.json",
+    "speech-provider.ts",
+    "tts.ts"
+  ],
+  "type": "module",
+  "scripts": {
+    "format:check": "oxfmt --check README.md package.json openclaw.plugin.json index.ts speech-provider.ts tts.ts speech-provider.test.ts tts.test.ts readme.test.ts vitest.config.ts",
+    "lint": "oxlint index.ts speech-provider.ts tts.ts speech-provider.test.ts tts.test.ts readme.test.ts vitest.config.ts",
+    "test": "vitest run --config vitest.config.ts",
+    "check": "pnpm run format:check && pnpm run lint && pnpm run test"
+  },
+  "devDependencies": {
+    "json5": "^2.2.3",
+    "oxfmt": "0.43.0",
+    "oxlint": "^1.58.0",
+    "vitest": "^4.1.2"
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.4.1"
+  },
+  "peerDependenciesMeta": {
+    "openclaw": {
+      "optional": true
+    }
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "providers": [
+      "inworld"
+    ],
+    "compat": {
+      "pluginApi": ">=2026.4.1",
+      "minGatewayVersion": "2026.4.1"
+    },
+    "build": {
+      "openclawVersion": "2026.4.1",
+      "pluginSdkVersion": "2026.4.1"
+    },
+    "install": {
+      "npmSpec": "openclaw-inworld-tts",
+      "defaultChoice": "npm",
+      "minHostVersion": ">=2026.4.1"
+    }
+  }
+}
