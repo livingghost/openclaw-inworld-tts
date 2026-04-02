@@ -1,6 +1,6 @@
 {
   "name": "openclaw-inworld-tts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "OpenClaw Inworld text-to-speech provider plugin",
   "license": "MIT",
   "files": [

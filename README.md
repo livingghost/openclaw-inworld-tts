@@ -11,6 +11,12 @@ It is built for OpenClaw's extension loader and ClawHub publication, not as a ge
 
 The extension registers the `inworld` speech provider, so OpenClaw config still uses `messages.tts.provider: "inworld"` and `messages.tts.providers.inworld`.
 
+## Requirements
+
+- OpenClaw `>=2026.4.1`
+- Inworld API key via `INWORLD_API_KEY` or `messages.tts.providers.inworld.apiKey`
+- An Inworld `voiceId`
+
 ## Install
 
 Once published, install it like any other external OpenClaw plugin:
