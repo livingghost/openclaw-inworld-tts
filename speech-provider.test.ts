@@ -3,7 +3,7 @@ import { buildInworldSpeechProvider } from "./speech-provider.js";
 
 describe("Inworld speech provider", () => {
   afterEach(() => {
-    delete process.env.INWORLD_API_KEY;
+    vi.unstubAllEnvs();
     vi.unstubAllGlobals();
   });
 
@@ -55,7 +55,7 @@ describe("Inworld speech provider", () => {
       }),
     ).toBe(false);
 
-    process.env.INWORLD_API_KEY = "env-token";
+    vi.stubEnv("INWORLD_API_KEY", "env-token");
     expect(
       provider.isConfigured?.({
         cfg: undefined,
